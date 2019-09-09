@@ -1,0 +1,12 @@
+{% extends 'articles/form.html' %}
+{% block body %}
+    <h2> {{ article.title }} </h2>
+    <div>
+      <p> 작성시간 : {{ article.created_at }} </p>
+      <p> 수정시간 : {{ article.updated_at }} </p>
+    </div>
+    <hr>
+    <p>{{ article.content }}</p>
+    <a href="/articles/">게시판으로 돌아가기</a>
+
+{% endblock %}

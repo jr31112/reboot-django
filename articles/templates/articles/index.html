@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>안녕!</h1>
-</body>
-</html>
+{% extends 'articles/form.html' %}
+{% block body %}
+<a href="/articles/new/">글 작성하기</a>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">제   목</th>
+      <th scope="col">작성일자</th>
+      <th scope="col">수정일자</th>
+      <th scope="col">비   고</th>
+    </tr>
+  </thead>
+  {% for article in articles %}
+  <tbody>
+    <th>{{article.pk}}</th>
+    <th><a href="/articles/{{ article.pk }}/">{{article.title}}</a></th>
+    <th>{{article.created_at}}</th>
+    <th>{{article.updated_at}}</th>
+    <td>
+        <a href="/articles/{{ article.pk }}/edit/">글 수정하기</a>
+        <a href="/articles/{{ article.pk }}/delete/">글 삭제하기</a>
+      </td>
+  </tbody>
+  {% endfor %}
+</table>
+{% endblock %}
