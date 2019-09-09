@@ -5,10 +5,10 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">제   목</th>
+      <th scope="col">제 목</th>
       <th scope="col">작성일자</th>
       <th scope="col">수정일자</th>
-      <th scope="col">비   고</th>
+      <th scope="col">비 고</th>
     </tr>
   </thead>
   {% for article in articles %}
@@ -18,9 +18,9 @@
     <th>{{article.created_at}}</th>
     <th>{{article.updated_at}}</th>
     <td>
-        <a href="/articles/{{ article.pk }}/edit/">글 수정하기</a>
-        <a href="/articles/{{ article.pk }}/delete/">글 삭제하기</a>
-      </td>
+      <a href="/articles/{{ article.pk }}/edit/">글 수정하기</a>
+      <a href="/articles/{{ article.pk }}/delete/">글 삭제하기</a>
+    </td>
   </tbody>
   {% endfor %}
 </table>
