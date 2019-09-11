@@ -1,0 +1,9 @@
+{% extends 'previous/base.html' %}
+{% block body %}
+  <p>{{ people.name }}님은 전생에</p>
+  <p>{{ people.job }}이였습니다!!</p>
+  <img src=" {{ image_url }}" alt="job_image">
+  <hr>
+  <a href="{% url 'previous:index' %}">다른 사람 전생 찾기!</a>
+
+{% endblock %}

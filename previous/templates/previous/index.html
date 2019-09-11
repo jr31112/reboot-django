@@ -1,0 +1,12 @@
+{% extends 'previous/base.html' %}
+
+{% block body %}
+<form action="{% url 'previous:find' %}" method="POST">
+  {% csrf_token %}
+  <label for="name">이름을 입력해 주세요</label>
+  <hr>
+  <input type="text" name="name" id="name">
+  <br>
+  <input type="submit" value="입력!!">
+</form>
+{% endblock %}
